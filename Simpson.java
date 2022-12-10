@@ -262,7 +262,8 @@ public class Main {
     //Parte de hommer realizado por Jaime González
     static void homer(){
         int num=0;
-
+                //a partir de aquí son decisiones con if y else if que llevan a distintos caminos en los que podrás hacer unas cosas
+                //u otras, y encontarte con distintos personajes icónicos de Los Simpson o Mat Groening
                 System.out.println("Es por la mañana, te acabas de despertar ¿Qué haces?");
                 System.out.println("  ");
                 System.out.println("1. Te levantas y te vas a desayunar");
