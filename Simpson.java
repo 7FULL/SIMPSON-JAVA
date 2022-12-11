@@ -1954,7 +1954,7 @@ public class Main {
                 x -= 1;
             }else{
                 //Si no es numero lo convertimos a minusuclas por el indexOf
-                input.toLowerCase();
+                input = input.toLowerCase();
             }
             //Ya hemos preguntado una vez asique a partir de aqui cada vez que preguntemos es porque el usuario no ha metido una respuesta correcta
             //y le saltamos el mensajito al principio
