@@ -1921,9 +1921,11 @@ public class Main {
         }
         return sub;
     }
-
+    
     //Funcion que imprime un menu y contiene un par de validaciones
     static int menu(String[] opciones){
+        String[] y = new String[opciones.length];//Array donde guardar temporalmente las opciones en minusculas
+
         String input = "";//Lo que salga del lector lo guardamos aqui
         boolean askedOnce = false;//Para saber si ya hemos preguntado una vez y saltar el mensaje de error
         int x = -1;//Si se puede convertir a numero el input lo guardaremos aqui
@@ -1943,7 +1945,7 @@ public class Main {
 
             //Una vez impreso tenemos que convertir el array a minusculas porque el indexOf es sensible a las minusuclas y masyusculas
             for (int i = 0; i < opciones.length; i++) {
-               opciones[i] = opciones[i].toLowerCase();
+               y[i] = opciones[i].toLowerCase();
             }
 
             input = lector.nextLine();
@@ -1960,15 +1962,15 @@ public class Main {
             //y le saltamos el mensajito al principio
             askedOnce = true;
             //Si el index no existe ni como numero ni como string pues preguntamos otra vez
-        }while(!Arrays.asList(opciones).contains(input)&&!indexExists(opciones,x));
+        }while(!Arrays.asList(y).contains(input)&&!indexExists(y,x));
 
         //Devolvemos su index por lo que al hacer los if hay que tener en cuenta que la primera opcion es 0 la segunda 1 y asi sucesivamente
         //Si quisiesemos que devolviese 1 en vez de 0 en la primera opcion por ejemplo pues simplemente Arrays.asList(opciones).indexOf(opciones[x])+1
         //Pero como nos da igual lo dejamos asi
-        if (indexExists(opciones,x)){
-            return Arrays.asList(opciones).indexOf(opciones[x]);
+        if (indexExists(y,x)){
+            return Arrays.asList(y).indexOf(y[x]);
         }else {
-            return Arrays.asList(opciones).indexOf(input);
+            return Arrays.asList(y).indexOf(input);
         }
     }
 
